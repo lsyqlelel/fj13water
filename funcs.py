@@ -4,20 +4,17 @@ import http
 import re
 
 def findAns(card):
-    global s, ths1,ths2,hua1,hua2, s,bmax,mid, hulu_num, hulu2_num, hulu, tonghua_da, da_hua, tonghua_xiao, xiao_hua, shunzi_da, shunzi_xiao,santiao_da, santiao_xiao,qdun, zdun, hdun
-    global h1,h2,h3,h4,n1,n2,n3,n4,n5,n6,n7,n8,n9,n10,n11,n12,n13, ans
-    # s = "*A $A #A *3 *4 *5 &3 &2 &6 $7 #3 #K &8"
+    global s, ths1, ths2, hua1, hua2, s,bmax,mid, hulu_num, hulu2_num, hulu, tonghua_da, da_hua, tonghua_xiao, xiao_hua, shunzi_da, shunzi_xiao,santiao_da, santiao_xiao,qdun, zdun, hdun
+    global h1, h2, h3, h4, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, n13, ans
     s = card[0] + card[1] + card[2] + card[3] + card[4] + card[5] + card[6] + card[7] + card[8] + card[9] + card[10] + card[11] + card[12]
     s = s.replace("10", "T")
     s = s.replace(" ", "")
-
     qdun = ""
     zdun = ""
     hdun = ""
-
     def trans_num(i):
         if i == 'A':
-            return 1
+            return 14
         if i == '2':
             return 2
         if i == '3':
@@ -44,8 +41,8 @@ def findAns(card):
             return 13
     # 放墩里用
     def ntoc(i):
-        if i == 1:
-            return '1'
+        if i == 14:
+            return 'A'
         if i == 2:
             return '2'
         if i == 3:
@@ -72,8 +69,8 @@ def findAns(card):
             return 'K'
     # 过程用
     def ntocT(i):
-        if i == 1:
-            return '1'
+        if i == 14:
+            return 'A'
         if i == 2:
             return '2'
         if i == 3:
@@ -99,7 +96,7 @@ def findAns(card):
         if i == 13:
             return 'K'
     def ntocTA(i):
-        if i == 1:
+        if i == 14:
             return 'A'
         if i == 2:
             return '2'
@@ -211,6 +208,7 @@ def findAns(card):
     bmax = 0
     mid = 0
     # 葫芦
+    hulu = []
     hulu_num = []
     hulu2_num = []
     # 同花
@@ -355,7 +353,7 @@ def findAns(card):
         if len(n13) == 4:
             bomb_num.append(13)
         if len(n1) == 4:
-            bomb_num.append(1)
+            bomb_num.append(14)
 
         if len(s) == 26:
             if len(bomb_num) == 3:  # 3个炸弹
@@ -435,7 +433,7 @@ def findAns(card):
         if len(n13) == 3:
             hulu_num.append(13)
         if len(n1) == 3:
-            hulu_num.append(1)
+            hulu_num.append(14)
 
         if len(n2) == 2:
             hulu2_num.append(2)
@@ -462,7 +460,7 @@ def findAns(card):
         if len(n13) == 2:
             hulu2_num.append(13)
         if len(n1) == 2:
-            hulu2_num.append(1)
+            hulu2_num.append(14)
 
         if len(hulu_num) == 0 or len(hulu2_num) == 0:
             return 0
@@ -777,7 +775,7 @@ def findAns(card):
         if len(n13) == 3:
             santiao_num.append(13)
         if len(n1) == 3:
-            santiao_num.append(1)
+            santiao_num.append(14)
         if len(santiao_num) == 0:  # 没有三条
             return 0
         elif len(santiao_num) == 1:  # 1个三条
