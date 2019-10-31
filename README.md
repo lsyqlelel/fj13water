@@ -8,4 +8,4 @@
 
 >编译方法 python
 
->使用方法 直接下载所有文件，用poweshell执行UI.py文件 main.py用于ai循环测试
+>使用方法 直接下载所有文件，用poweshell执行UI.py文件 ，main.py用于ai循环测试
