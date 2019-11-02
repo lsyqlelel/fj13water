@@ -8,4 +8,6 @@
 
 >编译方法 python
 
->使用方法 直接下载所有文件，用poweshell执行UI.py文件 ，main.py用于ai循环测试
+>使用方法 AI:下载main.exe，把main.exe和ui.py还有funcs.py放在同一文件夹下，点击main.exe运行即可（记得联网= =）
+>         UI:下载所有文件放在同一文件夹下，用poweshell执行ui.py文件（需要python环境，没有的请联系我或找其他同学帮忙一下，对不住…）
+>      (  关于UI为什么不打包成exe……打包倒是成功了，就是莫名其妙地闪退，也不报错，连nb的福哥都不会，我搞了一天问了几个大佬也就放弃了T_T  )
